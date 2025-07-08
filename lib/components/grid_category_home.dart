@@ -21,17 +21,15 @@ class GridCateroryHome extends StatelessWidget {
     return SizedBox(
       height: 180, // Altura do grid
       child: GridView.builder(
-        clipBehavior: Clip.none, // Permite que os filhos se estendam além dos limites
-        shrinkWrap: true, // Reduz o tamanho ao mínimo necessário
-        physics: const NeverScrollableScrollPhysics(), // Desabilita a rolagem
-        
+        clipBehavior: Clip.none,
+        shrinkWrap: true, // Reduz o tamanho o mínimo
+        physics: const NeverScrollableScrollPhysics(),
+
         // Espaçamento interno
         padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
 
-        // Número de itens baseado na lista categoryIcons
         itemCount: categoryIcons.length,
 
-        // Construtor de cada item do grid
         itemBuilder: (context, index) {
           return CategoryLabel(
             image: categoryIcons[index]['image'],
@@ -55,7 +53,7 @@ class CategoryLabel extends StatelessWidget {
   final String label;
   final String image;
   final VoidCallback? onTap;
-  
+
   const CategoryLabel({
     super.key,
     required this.label,
@@ -79,7 +77,6 @@ class CategoryLabel extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           mainAxisSize: MainAxisSize.min,
           children: [
-
             // Texto label da categoria
             SizedBox(
               width: 120,
@@ -97,7 +94,7 @@ class CategoryLabel extends StatelessWidget {
                 shape: BoxShape.circle, // Forma circular
                 color: AppColors.primaryColor.withValues(alpha: 0.1),
               ),
-              child: Image(image: AssetImage(image), height: 55, width: 40,)
+              child: Image(image: AssetImage(image), height: 55, width: 40),
             ),
           ],
         ),
