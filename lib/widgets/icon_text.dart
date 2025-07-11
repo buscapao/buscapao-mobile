@@ -5,7 +5,12 @@ class CustomIconText extends StatelessWidget {
   final String text;
   final IconData icon;
   final Color color;
-  const CustomIconText({super.key, required this.text, required this.icon, required this.color});
+  const CustomIconText({
+    super.key,
+    required this.text,
+    required this.icon,
+    required this.color,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +20,9 @@ class CustomIconText extends StatelessWidget {
         children: [
           Icon(icon, color: color, size: 20),
           const SizedBox(width: 5),
-          Text(text, style: AppTextStyles.size12Medium),
+          Text(text, style: AppTextStyles.size12Medium(context)),
         ],
       ),
     );
   }
 }
-
-

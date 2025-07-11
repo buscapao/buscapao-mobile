@@ -9,16 +9,13 @@ import 'package:projeto_/theme/text.dart';
 import 'package:projeto_/widgets/flip_button.dart';
 
 class MarketListHome extends StatelessWidget {
-  const MarketListHome({
-    super.key,
-  });
+  const MarketListHome({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-
         Padding(
           padding: AppPadding.symmetricHorizontal10,
 
@@ -26,8 +23,14 @@ class MarketListHome extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Lista de Mercados', style: AppTextStyles.size18Bold),
-              IconButton(onPressed: () {}, icon: Icon(LucideIcons.listFilter, size: 25)),
+              Text(
+                'Lista de Mercados',
+                style: AppTextStyles.size18Bold(context),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(LucideIcons.listFilter, size: 25),
+              ),
             ],
           ),
         ),
@@ -38,14 +41,15 @@ class MarketListHome extends StatelessWidget {
           padding: AppPadding.symmetricHorizontal10,
           separatorBuilder: (context, index) => const Divider(height: 1),
           itemCount: listMarkets.length,
-          itemBuilder: (context, index) => MarketsItemList(
-            logoMarket: listMarkets[index].image,
-            nameMarket: listMarkets[index].name,
-            check: Img.checkFull,
-            rate: 4.6,
-            quantityRate: 100,
-          )
-          ),
+          itemBuilder:
+              (context, index) => MarketsItemList(
+                logoMarket: listMarkets[index].image,
+                nameMarket: listMarkets[index].name,
+                check: Img.checkFull,
+                rate: 4.6,
+                quantityRate: 100,
+              ),
+        ),
       ],
     );
   }
@@ -58,7 +62,12 @@ class MarketsItemList extends StatelessWidget {
   final double rate;
   final int quantityRate;
   const MarketsItemList({
-    super.key, required this.logoMarket, required this.nameMarket, this.check, required this.rate, required this.quantityRate,
+    super.key,
+    required this.logoMarket,
+    required this.nameMarket,
+    this.check,
+    required this.rate,
+    required this.quantityRate,
   });
 
   @override
@@ -72,7 +81,7 @@ class MarketsItemList extends StatelessWidget {
             clipBehavior: Clip.none,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              boxShadow: AppShadows.shadowSmall
+              boxShadow: AppShadows.shadowSmall,
             ),
             child: Image(
               fit: BoxFit.cover,
@@ -80,9 +89,9 @@ class MarketsItemList extends StatelessWidget {
               height: 60,
             ),
           ),
-      
+
           SizedBox(width: 10),
-      
+
           //Dados sobre o mercado
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -90,7 +99,7 @@ class MarketsItemList extends StatelessWidget {
               //nome do mercado
               Row(
                 children: [
-                  Text(nameMarket, style: AppTextStyles.size14Bold),
+                  Text(nameMarket, style: AppTextStyles.size14Bold(context)),
                   SizedBox(width: 5),
                   //icone de verificado
                   Image(image: AssetImage(check!), height: 20),
@@ -103,42 +112,45 @@ class MarketsItemList extends StatelessWidget {
                   Image(image: AssetImage(Img.star), height: 25),
                   SizedBox(width: 5),
                   //nota do mercado
-                  Text(rate.toString(), style: AppTextStyles.size12Medium),
+                  Text(
+                    rate.toString(),
+                    style: AppTextStyles.size12Medium(context),
+                  ),
                   SizedBox(width: 5),
                   //quantidade de avaliacoes
-                  Text('($quantityRate)', style: AppTextStyles.size12Medium),
+                  Text(
+                    '($quantityRate)',
+                    style: AppTextStyles.size12Medium(context),
+                  ),
                 ],
               ),
-      
+
               // Tipo de entrega
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 5,),
+                padding: EdgeInsets.symmetric(horizontal: 5),
                 decoration: BoxDecoration(
                   borderRadius: AppRadius.border8,
                   color: Colors.greenAccent.withValues(alpha: 0.1),
                 ),
                 child: Row(
                   children: [
-                    Icon(
-                      LucideIcons.truck,
-                      color: Colors.green,
-                      size: 18,
-                    ),
+                    Icon(LucideIcons.truck, color: Colors.green, size: 18),
                     SizedBox(width: 5),
                     Text(
                       'Entrega grátis',
-                      style: AppTextStyles.size12Medium.copyWith(
-                        color: Colors.green,),
+                      style: AppTextStyles.size12Medium(
+                        context,
+                      ).copyWith(color: Colors.green),
                     ),
                   ],
                 ),
               ),
             ],
           ),
-      
+
           Spacer(),
-      
-         FlipButton(),
+
+          FlipButton(),
         ],
       ),
     );

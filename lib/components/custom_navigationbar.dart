@@ -37,28 +37,27 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-      
             BottomItens(
               index: 0,
               icon: LucideIcons.house400,
               label: 'Home',
               widget: widget,
             ),
-            
+
             BottomItens(
               index: 1,
               icon: LucideIcons.search400,
               label: 'Busca',
               widget: widget,
             ),
-      
+
             BottomItens(
               index: 2,
               icon: LucideIcons.history400,
               label: 'Histórico',
               widget: widget,
             ),
-            
+
             BottomItens(
               index: 3,
               icon: LucideIcons.userRound400,
@@ -102,9 +101,14 @@ class BottomItens extends StatelessWidget {
           const SizedBox(height: 4),
           Text(
             label,
-            style: isSelected
-                ? AppTextStyles.size12Medium.copyWith(color: AppColors.primaryColor)
-                : AppTextStyles.size12Medium.copyWith(color: AppColors.grey),
+            style:
+                isSelected
+                    ? AppTextStyles.size12Medium(
+                      context,
+                    ).copyWith(color: AppColors.primaryColor)
+                    : AppTextStyles.size12Medium(
+                      context,
+                    ).copyWith(color: AppColors.grey),
           ),
           if (isSelected)
             Container(
@@ -116,10 +120,9 @@ class BottomItens extends StatelessWidget {
                 color: AppColors.primaryColor,
                 borderRadius: BorderRadius.circular(2),
               ),
-            )
+            ),
         ],
       ),
     );
   }
 }
-

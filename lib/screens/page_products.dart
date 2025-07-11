@@ -17,7 +17,12 @@ class PageProducts extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(categoria, style: AppTextStyles.size24Medium.copyWith(color: AppColors.white)),
+        title: Text(
+          categoria,
+          style: AppTextStyles.size24Medium(
+            context,
+          ).copyWith(color: AppColors.white),
+        ),
         leading: IconButton(
           icon: const Icon(LucideIcons.chevronLeft),
           color: AppColors.white,
@@ -26,10 +31,8 @@ class PageProducts extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-        ),
-      body: Center(
-        child: Image.asset(imagemCategoria),
-      )
+      ),
+      body: Center(child: Image.asset(imagemCategoria)),
     );
   }
 }

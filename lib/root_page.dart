@@ -7,7 +7,7 @@ import 'package:projeto_/screens/history_page.dart';
 
 class RootPage extends StatefulWidget {
   const RootPage({super.key});
-  
+
   @override
   State<RootPage> createState() => _RootPageState();
 }

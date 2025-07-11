@@ -52,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
 
               Text(
                 'Busque, compare\ne compre com praticidade.',
-                style: AppTextStyles.size18Medium,
+                style: AppTextStyles.size18Medium(context),
               ),
 
               SizedBox(height: 40),
@@ -114,9 +114,9 @@ class _LoginPageState extends State<LoginPage> {
                 alignment: Alignment.center,
                 child: Text(
                   'ou',
-                  style: AppTextStyles.size14Medium.copyWith(
-                    color: AppColors.grey,
-                  ),
+                  style: AppTextStyles.size14Medium(
+                    context,
+                  ).copyWith(color: AppColors.grey),
                 ),
               ),
 
@@ -133,25 +133,32 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(height: 20),
 
               // Botão Cadastrar
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Ainda não possui uma conta?',
-                    style: AppTextStyles.size14Medium.copyWith(
-                      color: AppColors.grey,
-                    ),
-                  ),
-                  SizedBox(width: 5),
-                  SkipButton(
-                    text: 'Cadastre-se',
-                    onPressed:
-                        () => Navigation.navigateTo(
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.9,
+                child: Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Ainda não possui uma conta?',
+                        style: AppTextStyles.size14Medium(
                           context,
-                          const RegisterPage(),
-                        ),
+                        ).copyWith(color: AppColors.grey),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      SizedBox(width: 5),
+                      SkipButton(
+                        text: 'Cadastre-se',
+                        onPressed:
+                            () => Navigation.navigateTo(
+                              context,
+                              const RegisterPage(),
+                            ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ],
           ),
@@ -183,7 +190,7 @@ void _showModal(BuildContext context) {
 
                   Text(
                     'Digite o e-mail cadastrado, e enviaremos um link ou código para você.',
-                    style: AppTextStyles.size18Bold,
+                    style: AppTextStyles.size18Bold(context),
                     softWrap: true,
                     textAlign: TextAlign.center,
                   ),

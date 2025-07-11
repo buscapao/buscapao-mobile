@@ -21,7 +21,9 @@ class HistoryPage extends StatelessWidget {
         centerTitle: true,
         title: Text(
           'Meus Pedidos',
-          style: AppTextStyles.size24Medium.copyWith(color: AppColors.white),
+          style: AppTextStyles.size24Medium(
+            context,
+          ).copyWith(color: AppColors.white),
         ),
       ),
 
@@ -39,7 +41,7 @@ class HistoryPage extends StatelessWidget {
               padding: AppPadding.symmetricHorizontal10,
               child: Text(
                 'Histórico de compras',
-                style: AppTextStyles.size18Bold,
+                style: AppTextStyles.size18Bold(context),
               ),
             ),
 
@@ -127,7 +129,7 @@ class CardHistoric extends StatelessWidget {
               SizedBox(width: 10),
 
               // Nome do mercado
-              Text(nameMarket, style: AppTextStyles.size14Bold),
+              Text(nameMarket, style: AppTextStyles.size14Bold(context)),
               SizedBox(width: 5),
 
               Spacer(),
@@ -151,15 +153,15 @@ class CardHistoric extends StatelessWidget {
               SizedBox(width: 10),
 
               // Texto do status
-              Text(status, style: AppTextStyles.size14Bold),
+              Text(status, style: AppTextStyles.size14Bold(context)),
               SizedBox(width: 10),
 
               // Número do pedido
               Text(
                 'N° $orderNumber',
-                style: AppTextStyles.size14Medium.copyWith(
-                  color: AppColors.black.withValues(alpha: 0.6),
-                ),
+                style: AppTextStyles.size14Medium(
+                  context,
+                ).copyWith(color: AppColors.black.withValues(alpha: 0.6)),
               ),
             ],
           ),
@@ -188,7 +190,7 @@ class CardHistoric extends StatelessWidget {
                           ),
                           child: Text(
                             product.quantity.toString(),
-                            style: AppTextStyles.size14Medium,
+                            style: AppTextStyles.size14Medium(context),
                           ),
                         ),
 
@@ -198,7 +200,7 @@ class CardHistoric extends StatelessWidget {
                         Expanded(
                           child: Text(
                             product.name,
-                            style: AppTextStyles.size14Medium.copyWith(
+                            style: AppTextStyles.size14Medium(context).copyWith(
                               color: AppColors.black.withValues(alpha: 0.6),
                             ),
                             overflow: TextOverflow.ellipsis,
@@ -208,9 +210,9 @@ class CardHistoric extends StatelessWidget {
                         // Preço do produto
                         Text(
                           'R\$ ${product.price.toStringAsFixed(2)}',
-                          style: AppTextStyles.size14Medium.copyWith(
-                            color: AppColors.black,
-                          ),
+                          style: AppTextStyles.size14Medium(
+                            context,
+                          ).copyWith(color: AppColors.black),
                         ),
                       ],
                     ),
@@ -227,7 +229,11 @@ class CardHistoric extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SkipButton(text: 'Detalhes do pedido', color: AppColors.red, onPressed: () {}),
+                SkipButton(
+                  text: 'Detalhes do pedido',
+                  color: AppColors.red,
+                  onPressed: () {},
+                ),
                 SkipButton(onPressed: onTap, text: 'Pedir novamente'),
               ],
             ),

@@ -25,7 +25,9 @@ class SearchPage extends StatelessWidget {
               // Titulo destaques
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [Text('Categorias', style: AppTextStyles.size18Bold)],
+                children: [
+                  Text('Categorias', style: AppTextStyles.size18Bold(context)),
+                ],
               ),
             ),
             SizedBox(height: 20),
@@ -93,7 +95,5 @@ final List<Map<String, dynamic>> categoryIcons = [
   {'image': Img.outros, 'label': 'Outros'},
 
   // promo
-
   {'image': Img.promo, 'label': 'Promoções'},
-
 ];

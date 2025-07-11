@@ -15,9 +15,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Montserrat',
         scaffoldBackgroundColor: AppColors.white,
-        appBarTheme:  AppBarTheme(
-          backgroundColor: AppColors.primaryColor,
-          iconTheme: const IconThemeData(color: AppColors.white),
+        appBarTheme: AppBarTheme(backgroundColor: AppColors.primaryColor),
+        iconButtonTheme: IconButtonThemeData(
+          style: IconButton.styleFrom(foregroundColor: AppColors.white),
         ),
         useMaterial3: true,
       ),

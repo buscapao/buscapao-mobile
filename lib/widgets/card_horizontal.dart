@@ -53,7 +53,7 @@ class ProductCardHorizontal extends StatelessWidget {
                       vertical: 4,
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.green.withOpacity(0.6),
+                      color: Colors.green.withValues(alpha: 0.8),
                       borderRadius: AppRadius.border8,
                     ),
                     child: const Text(
@@ -116,7 +116,7 @@ class ProductCardHorizontal extends StatelessWidget {
                       InkWell(
                         onTap: () {},
                         child: Container(
-                          decoration:  BoxDecoration(
+                          decoration: BoxDecoration(
                             color: Colors.black,
                             borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(12),
@@ -127,7 +127,10 @@ class ProductCardHorizontal extends StatelessWidget {
                             width: 40,
                             height: 40,
                             child: Center(
-                              child: Icon(LucideIcons.shoppingCart, color: Colors.white),
+                              child: Icon(
+                                LucideIcons.shoppingCart,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ),

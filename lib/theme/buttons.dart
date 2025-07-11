@@ -25,14 +25,13 @@ class SkipButton extends StatelessWidget {
       onTap: onPressed,
       child: Text(
         text,
-        style: AppTextStyles.size14Medium.copyWith(
-          color: color,
-        ),
+        style: AppTextStyles.size14Medium(context).copyWith(color: color),
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
       ),
     );
   }
 }
-
 
 //botão com icone de next
 class NextButton extends StatelessWidget {
@@ -101,7 +100,9 @@ class PrimaryButton extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         text,
-        style: AppTextStyles.size18Medium.copyWith(color: AppColors.white),
+        style: AppTextStyles.size18Medium(
+          context,
+        ).copyWith(color: AppColors.white),
       ),
     );
   }
@@ -134,7 +135,9 @@ class SecondaryButton extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         text,
-        style: AppTextStyles.size18Medium.copyWith(color: AppColors.primaryColor),
+        style: AppTextStyles.size18Medium(
+          context,
+        ).copyWith(color: AppColors.primaryColor),
       ),
     );
   }
@@ -172,7 +175,9 @@ class SocialButton extends StatelessWidget {
           const SizedBox(width: 10),
           Text(
             text,
-            style: AppTextStyles.size18Medium.copyWith(color: AppColors.black),
+            style: AppTextStyles.size18Medium(
+              context,
+            ).copyWith(color: AppColors.black),
           ),
         ],
       ),

@@ -21,7 +21,10 @@ class CarouselProductsHome extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Produtos em Destaques', style: AppTextStyles.size18Bold),
+              Text(
+                'Produtos em Destaques',
+                style: AppTextStyles.size18Bold(context),
+              ),
 
               //Leva pra página de mercados destaque
               SkipButton(text: 'Ver tudo', onPressed: () {}),
@@ -116,7 +119,7 @@ class ProductCaroucelItem extends StatelessWidget {
                 width: 100,
                 child: Text(
                   nameMarket,
-                  style: AppTextStyles.size12Medium,
+                  style: AppTextStyles.size12Medium(context),
                   overflow: TextOverflow.ellipsis,
                   maxLines: 2,
                   softWrap: true,
@@ -129,7 +132,7 @@ class ProductCaroucelItem extends StatelessWidget {
           //nome do produto
           Text(
             nameProduct,
-            style: AppTextStyles.size14Bold,
+            style: AppTextStyles.size14Bold(context),
             maxLines: 1,
             softWrap: true,
             overflow: TextOverflow.ellipsis,
@@ -139,7 +142,9 @@ class ProductCaroucelItem extends StatelessWidget {
           //preco do produto
           Text(
             priceProduct,
-            style: AppTextStyles.size16Bold.copyWith(color: AppColors.red),
+            style: AppTextStyles.size16Bold(
+              context,
+            ).copyWith(color: AppColors.red),
           ),
           SizedBox(height: 20),
         ],

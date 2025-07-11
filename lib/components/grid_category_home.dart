@@ -82,7 +82,7 @@ class CategoryLabel extends StatelessWidget {
               width: 120,
               child: Text(
                 label,
-                style: AppTextStyles.size16Bold,
+                style: AppTextStyles.size16Bold(context),
                 softWrap: true,
               ),
             ),

@@ -39,7 +39,7 @@ class ProductCardVertical extends StatelessWidget {
                     height: double.infinity,
                   ),
                 ),
-    
+
                 /// desconto em porcentagem
                 Positioned(
                   top: 12,
@@ -49,7 +49,7 @@ class ProductCardVertical extends StatelessWidget {
                       vertical: 4,
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.green.withOpacity(0.8),
+                      color: Colors.green.withValues(alpha: 0.8),
                       borderRadius: AppRadius.border8,
                     ),
                     child: const Text(
@@ -64,9 +64,9 @@ class ProductCardVertical extends StatelessWidget {
               ],
             ),
           ),
-    
+
           const SizedBox(height: 8),
-    
+
           /// detalhes
           Padding(
             padding: AppPadding.onlyLeft8,
@@ -88,16 +88,20 @@ class ProductCardVertical extends StatelessWidget {
                     ),
                     const SizedBox(width: 4),
                     ClipOval(
-                      child: Image.network('https://ecommerce-image-catalog.s3.us-east-1.amazonaws.com/Luiz+Tonin/Logo/Logo_Tonin_Generica.webp', height: 20, fit: BoxFit.contain),
+                      child: Image.network(
+                        'https://ecommerce-image-catalog.s3.us-east-1.amazonaws.com/Luiz+Tonin/Logo/Logo_Tonin_Generica.webp',
+                        height: 20,
+                        fit: BoxFit.contain,
+                      ),
                     ),
                   ],
                 ),
               ],
             ),
           ),
-    
+
           const Spacer(),
-    
+
           /// Preço e botão de adicionar
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -132,8 +136,3 @@ class ProductCardVertical extends StatelessWidget {
     );
   }
 }
-
-
-
-
-

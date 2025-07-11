@@ -1,25 +1,25 @@
 class City {
-  final int cityID;
-  final String name;
-  final String state;
-  final String zipCode;
-  final String ibgeCode;
-  final String street;
-  final String neighborhood;
-  final String uf;
+  final int? cityID;
+  final String? name;
+  final String? state;
+  final String? zipCode;
+  final String? ibgeCode;
+  final String? street;
+  final String? neighborhood;
+  final String? uf;
 
   City({
-    required this.cityID,
-    required this.name,
-    required this.state,
-    required this.zipCode,
-    required this.ibgeCode,
-    required this.street,
-    required this.neighborhood,
-    required this.uf,
+    this.cityID,
+    this.name,
+    this.state,
+    this.zipCode,
+    this.ibgeCode,
+    this.street,
+    this.neighborhood,
+    this.uf,
   });
 
-  factory City.fromJson(Map<String, dynamic> json) {
+  factory City.fromJson(Map<String?, dynamic> json) {
     return City(
       cityID: json['cityID'],
       name: json['name'],
@@ -32,7 +32,7 @@ class City {
     );
   }
 
-  Map<String, dynamic> toJson() {
+  Map<String?, dynamic> toJson() {
     return {
       'cityID': cityID,
       'name': name,

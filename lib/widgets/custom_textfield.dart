@@ -67,10 +67,12 @@ class CustomTextField extends StatelessWidget {
         hintText: hint,
         labelText: label,
         // estilos de texto
-        floatingLabelStyle: AppTextStyles.size18Normal.copyWith(
-          color: AppColors.black.withValues(alpha: 0.7),
-        ),
-        hintStyle: AppTextStyles.size14Normal.copyWith(color: AppColors.grey),
+        floatingLabelStyle: AppTextStyles.size18Normal(
+          context,
+        ).copyWith(color: AppColors.black.withValues(alpha: 0.7)),
+        hintStyle: AppTextStyles.size14Normal(
+          context,
+        ).copyWith(color: AppColors.grey),
         // icones
         prefixIcon: Icon(icon, color: AppColors.grey),
         suffixIcon: IconButton(
@@ -84,7 +86,6 @@ class CustomTextField extends StatelessWidget {
     );
   }
 }
-
 
 class SecundaryTextField extends StatelessWidget {
   final String label;
@@ -144,10 +145,12 @@ class SecundaryTextField extends StatelessWidget {
         labelText: label,
 
         //estilos de texto
-        floatingLabelStyle: AppTextStyles.size18Normal.copyWith(
-          color: AppColors.black.withValues(alpha: 0.7),
-        ),
-        hintStyle: AppTextStyles.size14Normal.copyWith(color: AppColors.grey),
+        floatingLabelStyle: AppTextStyles.size18Normal(
+          context,
+        ).copyWith(color: AppColors.black.withValues(alpha: 0.7)),
+        hintStyle: AppTextStyles.size14Normal(
+          context,
+        ).copyWith(color: AppColors.grey),
 
         //propriedades
         filled: true,
@@ -185,7 +188,7 @@ class ProfileTextField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(labelText, style: AppTextStyles.size16Medium),
+        Text(labelText, style: AppTextStyles.size16Medium(context)),
         const SizedBox(height: 10),
         TextFormField(
           onChanged: onChanged,

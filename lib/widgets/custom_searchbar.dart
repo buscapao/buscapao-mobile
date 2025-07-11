@@ -9,7 +9,10 @@ class CustomSearchBar extends StatelessWidget {
   final String label;
   final IconData? iconScan;
   const CustomSearchBar({
-    super.key, this.iconSerach, required this.label, this.iconScan,
+    super.key,
+    this.iconSerach,
+    required this.label,
+    this.iconScan,
   });
 
   @override
@@ -21,29 +24,30 @@ class CustomSearchBar extends StatelessWidget {
           borderRadius: AppRadius.border24,
           borderSide: const BorderSide(color: Colors.transparent),
         ),
-    
+
         enabledBorder: OutlineInputBorder(
           borderRadius: AppRadius.border24,
           borderSide: const BorderSide(color: Colors.transparent),
         ),
-    
+
         focusedBorder: OutlineInputBorder(
           borderRadius: AppRadius.border24,
           borderSide: const BorderSide(color: Colors.transparent),
         ),
-    
+
         disabledBorder: OutlineInputBorder(
           borderRadius: AppRadius.border24,
           borderSide: const BorderSide(color: Colors.transparent),
         ),
-    
+
         hintText: label,
-        hintStyle: AppTextStyles.size16Normal.copyWith(color: AppColors.grey),
+        hintStyle: AppTextStyles.size16Normal(
+          context,
+        ).copyWith(color: AppColors.grey),
         filled: true,
         fillColor: Colors.white,
         prefixIcon: Icon(iconSerach, color: AppColors.grey),
         suffixIcon: Icon(iconScan, color: AppColors.grey),
-    
       ),
     );
   }

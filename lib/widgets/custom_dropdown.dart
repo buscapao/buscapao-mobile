@@ -34,10 +34,12 @@ class CustomDropdown extends StatelessWidget {
               children: [
                 Text(
                   selectedCity.name,
-                  style: AppTextStyles.size14Bold.copyWith(color: AppColors.white),
+                  style: AppTextStyles.size14Bold(
+                    context,
+                  ).copyWith(color: AppColors.white),
                 ),
                 SizedBox(width: 2),
-                Icon(LucideIcons.chevronDown, color: AppColors.white, size: 20,),
+                Icon(LucideIcons.chevronDown, color: AppColors.white, size: 20),
               ],
             ),
           ),

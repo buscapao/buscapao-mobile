@@ -21,7 +21,10 @@ class CarouselMarketHome extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Mercados em Destaques', style: AppTextStyles.size18Bold),
+              Text(
+                'Mercados em Destaques',
+                style: AppTextStyles.size18Bold(context),
+              ),
 
               //Leva pra página de mercados destaque
               SkipButton(text: 'Ver tudo', onPressed: () {}),
@@ -103,7 +106,7 @@ class CardMarketHome extends StatelessWidget {
             Flexible(
               child: Text(
                 name,
-                style: AppTextStyles.size14Bold,
+                style: AppTextStyles.size14Bold(context),
                 overflow: TextOverflow.ellipsis,
               ),
             ),
@@ -111,7 +114,7 @@ class CardMarketHome extends StatelessWidget {
             SizedBox(height: 4),
 
             //endereco do mercado
-            Text(address, style: AppTextStyles.size12Medium),
+            Text(address, style: AppTextStyles.size12Medium(context)),
           ],
         ),
       ),

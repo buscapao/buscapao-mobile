@@ -28,11 +28,7 @@ class Profile extends StatelessWidget {
       'subtitle': 'Informações do seu endereço',
       'icon': 'mappin',
     },
-    {
-      'title': 'Favoritos',
-      'subtitle': 'Mercados favoritos',
-      'icon': 'heart',
-    },
+    {'title': 'Favoritos', 'subtitle': 'Mercados favoritos', 'icon': 'heart'},
     {
       'title': 'Formas de pagamento',
       'subtitle': 'Saldos e cartões',
@@ -70,14 +66,12 @@ class Profile extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-
             // Header com imagem e informações do usuário
             SecondContainerRadius(
               child: Padding(
                 padding: AppPadding.symmetricVertical10.copyWith(top: 20),
                 child: Column(
                   children: [
-
                     /// Foto de perfil
                     Container(
                       height: 90,
@@ -96,9 +90,9 @@ class Profile extends StatelessWidget {
                     /// Nome do usuário
                     Text(
                       'Cremosinho',
-                      style: AppTextStyles.size24Medium.copyWith(
-                        color: AppColors.white,
-                      ),
+                      style: AppTextStyles.size24Medium(
+                        context,
+                      ).copyWith(color: AppColors.white),
                     ),
 
                     SizedBox(height: 4),
@@ -106,9 +100,9 @@ class Profile extends StatelessWidget {
                     /// Email do usuário
                     Text(
                       'email@email.com',
-                      style: AppTextStyles.size16Medium.copyWith(
-                        color: AppColors.white.withValues(alpha: 0.7),
-                      ),
+                      style: AppTextStyles.size16Medium(
+                        context,
+                      ).copyWith(color: AppColors.white.withValues(alpha: 0.7)),
                       textAlign: TextAlign.start,
                     ),
                   ],
@@ -123,8 +117,8 @@ class Profile extends StatelessWidget {
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   padding: AppPadding.symmetricHorizontal20.copyWith(top: 40),
-                  separatorBuilder: (context, index) =>
-                      const Divider(height: 1),
+                  separatorBuilder:
+                      (context, index) => const Divider(height: 1),
                   itemCount: _menuItems.length,
                   itemBuilder: (context, index) {
                     return ProfileItem(
@@ -132,39 +126,30 @@ class Profile extends StatelessWidget {
                       title: _menuItems[index]['title']!,
                       description: _menuItems[index]['subtitle']!,
                       onTap: () {
-
                         // Ações ao tocar em cada item
                         switch (index) {
                           case 0:
                             Navigator.push(
                               context,
-                              MaterialPageRoute(
-                                builder: (_) =>  PersonalPage(),
-                              ),
+                              MaterialPageRoute(builder: (_) => PersonalPage()),
                             );
                             break;
                           case 1:
                             Navigator.push(
                               context,
-                              MaterialPageRoute(
-                                builder: (_) => AddressPage(),
-                              ),
+                              MaterialPageRoute(builder: (_) => AddressPage()),
                             );
                             break;
                           case 2:
                             Navigator.push(
                               context,
-                              MaterialPageRoute(
-                                builder: (_) => FavoritePage(),
-                              ),
+                              MaterialPageRoute(builder: (_) => FavoritePage()),
                             );
                             break;
                           case 3:
                             Navigator.push(
                               context,
-                              MaterialPageRoute(
-                                builder: (_) => CardPage(),
-                              ),
+                              MaterialPageRoute(builder: (_) => CardPage()),
                             );
                             break;
                           case 4:
@@ -212,13 +197,15 @@ class ProfileItem extends StatelessWidget {
       leading: Icon(icon, color: AppColors.black, size: 24),
       title: Text(
         title,
-        style: AppTextStyles.size16Medium.copyWith(color: AppColors.black),
+        style: AppTextStyles.size16Medium(
+          context,
+        ).copyWith(color: AppColors.black),
       ),
       subtitle: Text(
         description,
-        style: AppTextStyles.size14Medium.copyWith(
-          color: AppColors.black.withValues(alpha: 0.6),
-        ),
+        style: AppTextStyles.size14Medium(
+          context,
+        ).copyWith(color: AppColors.black.withValues(alpha: 0.6)),
       ),
       trailing: Icon(
         LucideIcons.chevronRight,

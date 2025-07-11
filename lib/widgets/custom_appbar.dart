@@ -48,7 +48,6 @@ class _CustomAppBarState extends State<CustomAppBar> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
               // custom dropdown
               Container(
                 alignment: Alignment.centerLeft,
@@ -63,7 +62,6 @@ class _CustomAppBarState extends State<CustomAppBar> {
                 ),
               ),
               SizedBox(height: 15),
-
             ],
           ),
         ),
@@ -91,18 +89,21 @@ class _SecondAppBarState extends State<SecondAppBar> {
       clipBehavior: Clip.none,
       title: Padding(
         padding: const EdgeInsets.only(top: 20),
-        child: CustomSearchBar( iconSerach: LucideIcons.search, label: 'Busque por um produto ou categoria',),
+        child: CustomSearchBar(
+          iconSerach: LucideIcons.search,
+          label: 'Busque por um produto ou categoria',
+        ),
       ),
-      bottom: PreferredSize(preferredSize: const Size.fromHeight(20), child: SizedBox(height: 20)),
+      bottom: PreferredSize(
+        preferredSize: const Size.fromHeight(20),
+        child: SizedBox(height: 20),
+      ),
     );
   }
 }
 
-
 class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const ProfileAppBar({
-    super.key,
-  });
+  const ProfileAppBar({super.key});
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight + 30);
@@ -123,28 +124,22 @@ class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
           leading: CircleAvatar(
             radius: 25,
             backgroundColor: AppColors.black,
-            child: Icon(
-              LucideIcons.user,
-              color: AppColors.primaryColor,
-            ),
+            child: Icon(LucideIcons.user, color: AppColors.primaryColor),
           ),
           title: Text(
             'Nome usuário',
-            style: AppTextStyles.size18Medium.copyWith(
-              color: AppColors.black,
-            ),
+            style: AppTextStyles.size18Medium(
+              context,
+            ).copyWith(color: AppColors.black),
           ),
           subtitle: Text(
             'Email',
-            style: AppTextStyles.size14Medium.copyWith(
-              color: AppColors.black.withValues(alpha: 0.7),
-            ),
+            style: AppTextStyles.size14Medium(
+              context,
+            ).copyWith(color: AppColors.black.withValues(alpha: 0.7)),
           ),
 
-          trailing: Icon(
-            LucideIcons.chevronRight,
-            color: AppColors.black,
-          ),
+          trailing: Icon(LucideIcons.chevronRight, color: AppColors.black),
         ),
       ),
       bottom: PreferredSize(
@@ -154,7 +149,6 @@ class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 }
-
 
 class AppBarProfile extends StatelessWidget implements PreferredSizeWidget {
   const AppBarProfile({super.key, required String title});

@@ -35,8 +35,11 @@ class CouponsPage extends StatelessWidget {
                   width: 35,
                 ),
               ),
-              title: Text('Cupom 1', style: AppTextStyles.size16Bold),
-              subtitle: Text('Descricao', style: AppTextStyles.size14Medium),
+              title: Text('Cupom 1', style: AppTextStyles.size16Bold(context)),
+              subtitle: Text(
+                'Descricao',
+                style: AppTextStyles.size14Medium(context),
+              ),
               trailing: Icon(
                 LucideIcons.chevronRight,
                 color: AppColors.black,
