@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:projeto_/helpers/mask.dart';
-import 'package:projeto_/theme/buttons.dart';
 import 'package:projeto_/theme/colors.dart';
 import 'package:projeto_/theme/img.dart';
 import 'package:projeto_/theme/padding.dart';
@@ -93,11 +92,9 @@ class PersonalPage extends StatelessWidget {
 
           Padding(
             padding: AppPadding.symmetricHorizontal20,
-            child: PrimaryButton(
+            child: ElevatedButton(
               onPressed: () {},
-              text: 'Salvar',
-              heigh: 50,
-              width: double.infinity,
+              child: const Text('Salvar'),
             ),
           ),
         ],

@@ -11,7 +11,7 @@ class CustomTextField extends StatelessWidget {
   final IconData icon;
   final IconData? suffixIcon;
   final VoidCallback? iconAction;
-  final bool obscureText;
+  final bool? obscureText;
   final Function(String value) onChanged;
   final TextEditingController controller;
   final TextInputType keyboardType;
@@ -25,19 +25,19 @@ class CustomTextField extends StatelessWidget {
     required this.icon,
     this.suffixIcon,
     this.iconAction,
-    required this.obscureText,
     required this.onChanged,
     required this.controller,
     required this.keyboardType,
     required this.textInputAction,
     this.inputFormatters,
+    this.obscureText,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       textInputAction: textInputAction,
-      obscureText: obscureText,
+      obscureText: obscureText ?? false,
       controller: controller,
       keyboardType: keyboardType,
       onChanged: onChanged,

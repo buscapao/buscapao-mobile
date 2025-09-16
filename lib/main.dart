@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_/screens/prev.login.dart';
+import 'package:projeto_/theme/buttons.dart';
 import 'package:projeto_/theme/colors.dart';
 
 void main() => runApp(const MyApp());
@@ -19,6 +20,9 @@ class MyApp extends StatelessWidget {
         iconButtonTheme: IconButtonThemeData(
           style: IconButton.styleFrom(foregroundColor: AppColors.white),
         ),
+        elevatedButtonTheme: AppButtonTheme.elevatedButtonTheme,
+        outlinedButtonTheme: AppButtonTheme.outlinedButtonTheme,
+        textButtonTheme: AppButtonTheme.textButtonTheme,
         useMaterial3: true,
       ),
       home: PrevLogin(),

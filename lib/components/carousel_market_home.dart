@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_/data/models/list_markets.dart';
-import 'package:projeto_/theme/buttons.dart';
 import 'package:projeto_/theme/colors.dart';
 import 'package:projeto_/theme/img.dart';
 import 'package:projeto_/theme/padding.dart';
@@ -27,7 +26,7 @@ class CarouselMarketHome extends StatelessWidget {
               ),
 
               //Leva pra página de mercados destaque
-              SkipButton(text: 'Ver tudo', onPressed: () {}),
+              TextButton(child: Text('Ver tudo'), onPressed: () {}),
             ],
           ),
         ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:projeto_/data/models/list_historic.dart';
-import 'package:projeto_/theme/buttons.dart';
 import 'package:projeto_/theme/colors.dart';
 import 'package:projeto_/theme/padding.dart';
 import 'package:projeto_/theme/radius.dart';
@@ -229,12 +228,17 @@ class CardHistoric extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SkipButton(
-                  text: 'Detalhes do pedido',
-                  color: AppColors.red,
+                TextButton(
+                  child: const Text(
+                    'Detalhes do pedido',
+                    style: TextStyle(color: AppColors.red),
+                  ),
                   onPressed: () {},
                 ),
-                SkipButton(onPressed: onTap, text: 'Pedir novamente'),
+                TextButton(
+                  onPressed: onTap,
+                  child: const Text('Repetir pedido'),
+                ),
               ],
             ),
           ),

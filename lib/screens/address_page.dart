@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:projeto_/theme/buttons.dart';
 import 'package:projeto_/theme/padding.dart';
 import 'package:projeto_/widgets/custom_appbar.dart';
 import 'package:projeto_/widgets/custom_textfield.dart';
@@ -123,11 +122,9 @@ class AddressPage extends StatelessWidget {
 
             // Botão Salvar
             SizedBox(height: 20),
-            PrimaryButton(
+            ElevatedButton(
               onPressed: () {},
-              text: 'Salvar',
-              heigh: 50,
-              width: double.infinity,
+              child: const Text('Salvar'),
             ),
           ],
         ),

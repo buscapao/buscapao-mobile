@@ -13,7 +13,7 @@ class UserModelFisica {
   String? genero;
   String? tipoUsuario;
 
-  /// Validação da senha com os critérios necessários
+  /// !Validação da senha com os critérios necessários
   Map<String, bool> validatePassword(String value) {
     return {
       'Mínimo de 8 caracteres': value.length >= 8,
@@ -24,7 +24,7 @@ class UserModelFisica {
     };
   }
 
-  /// Validação da confirmação de senha
+  /// !Validação da confirmação de senha
   String? validateConfirmPassword(String value) {
     if (value.isNotEmpty && value != password) {
       return 'As senhas não coincidem.';
@@ -33,7 +33,7 @@ class UserModelFisica {
   }
 }
 
-/// Service responsável pela lógica de negócio do cadastro de pessoa física.
+/// !Service responsável pela lógica de negócio do cadastro de pessoa física.
 class CadastroFisicaService {
   /// Valida os campos obrigatórios do formulário.
   String? validarCamposObrigatorios(

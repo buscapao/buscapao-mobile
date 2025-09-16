@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_/theme/buttons.dart';
 import 'package:projeto_/helpers/navigation.dart';
 import 'package:projeto_/screens/login_page.dart';
 import 'package:projeto_/screens/register_page.dart';
@@ -25,22 +24,16 @@ class PrevLogin extends StatelessWidget {
               Image(image: AssetImage(Img.logoNameBlue), height: 80),
 
               Spacer(),
-              PrimaryButton(
+              ElevatedButton(
                 onPressed: () => Navigation.replaceCurrent(context, LoginPage()),
-
-                text: 'Já possuo conta',
-                heigh: 50,
-                width: double.infinity,
+                child: Text('Entrar'),
               ),
 
               SizedBox(height: 20),
 
-              SecondaryButton(
+              OutlinedButton(
                 onPressed: () => Navigation.navigateTo(context, RegisterPage()),
-
-                text: 'Cadastrar',
-                heigh: 50,
-                width: double.infinity,
+                child: Text('Cadastrar'),
               ),
             ],
           ),

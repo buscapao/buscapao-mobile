@@ -6,7 +6,6 @@ import 'package:projeto_/theme/colors.dart';
 import 'package:projeto_/theme/img.dart';
 import 'package:projeto_/theme/padding.dart';
 import 'package:projeto_/helpers/navigation.dart';
-import 'package:projeto_/theme/buttons.dart';
 import 'package:projeto_/widgets/custom_textfield.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -154,12 +153,10 @@ class _RegisterPageState extends State<RegisterPage> {
               const SizedBox(height: 30),
 
               // Botão cadastrar
-              PrimaryButton(
+              ElevatedButton(
                 onPressed:
                     () => Navigation.navigateTo(context, const RootPage()),
-                text: 'Cadastrar',
-                heigh: 50,
-                width: double.infinity,
+                child: const Text('Cadastrar'),
               ),
 
               const SizedBox(height: 20),

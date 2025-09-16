@@ -20,14 +20,14 @@ class AppTextStyles {
     // Aumenta levemente dependendo do tamanho da tela
     double scaled = size;
     if (width < 400) {
-      scaled = size * 1; // pequeno aumento em telas pequenas
+      scaled = size * 1;
     } else if (width > 800) {
-      scaled = size * 1; // aumento moderado em telas grandes
+      scaled = size * 1;
     } else {
-      scaled = size * 1; // aumento padrão em telas médias
+      scaled = size * 1;
     }
 
-    // Aplica TextScaler (acessibilidade) e limita entre 95% e 150% do tamanho original
+    // Aplica TextScaler e limita entre 95% e 150% do tamanho original
     final double result = textScaler.scale(scaled);
     return result.clamp(size * 0.95, size * 1.5);
   }
